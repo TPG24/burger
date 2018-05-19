@@ -1,44 +1,79 @@
-<div class="row">
-    <center>
-        <!-- Left side (ready to eat) -->
-        <div class="col-md-6">
-            <h4 class="red_font">Ready to eat!</h4>
-            <div id="ready_to_eat">
+<!--<div class="row">-->
+    <!--<center>-->
+        <!--&lt;!&ndash; Left side (ready to eat) &ndash;&gt;-->
+        <!--<div class="col-md-6">-->
+            <!--<h4 class="red_font">Ready to eat!</h4>-->
+            <!--<div id="ready_to_eat">-->
 
-                <!-- Dynamically Insert Ready Burgers Here -->
-                {{#each burgers}}
-                    {{#unless devoured}}
-                        <form action="burger/eat/{{id}}" method="POST">
-                            <div class="input-group">
-                                <li class="form-control">{{id}}. {{burger_name}}</li>
-                                <span class="input-group-btn">
-                  <button class="btn btn-success devour-button" type="submit">Devour It!</button>
-                </span>
-                            </div>
-                        </form>
-                    {{/unless}}
-                {{/each}}
+                <!--&lt;!&ndash; Dynamically Insert Ready Burgers Here &ndash;&gt;-->
+                <!--{{#each burgers}}-->
+                    <!--{{#unless devoured}}-->
+                        <!--<form action="burger/eat/{{id}}" method="POST">-->
+                            <!--<div class="input-group">-->
+                                <!--<li class="form-control">{{id}}. {{burger_name}}</li>-->
+                                <!--<span class="input-group-btn">-->
+                  <!--<button class="btn btn-success devour-button" type="submit">Devour It!</button>-->
+                <!--</span>-->
+                            <!--</div>-->
+                        <!--</form>-->
+                    <!--{{/unless}}-->
+                <!--{{/each}}-->
 
-            </div>
-        </div>
+            <!--</div>-->
+        <!--</div>-->
 
-        <!-- Right side (already eaten) -->
-        <div class="col-md-6">
-            <h4 class="red_font">Already eaten!</h4>
-            <div id="already_eaten">
+        <!--&lt;!&ndash; Right side (already eaten) &ndash;&gt;-->
+        <!--<div class="col-md-6">-->
+            <!--<h4 class="red_font">Already eaten!</h4>-->
+            <!--<div id="already_eaten">-->
 
-                <!-- Dynamically Insert Eaten Burgers Here -->
-                {{#each burgers}}
-                    {{#if this.devoured}}
-                        <div class="input-group">
-                            <li class="form-control">{{this.id}}. {{this.burger_name}}</li>
-                            <span class="input-group-btn">
-              </span>
-                        </div>
-                    {{/if}}
-                {{/each}}
+                <!--&lt;!&ndash; Dynamically Insert Eaten Burgers Here &ndash;&gt;-->
+                <!--{{#each burgers}}-->
+                    <!--{{#if this.devoured}}-->
+                        <!--<div class="input-group">-->
+                            <!--<li class="form-control">{{this.id}}. {{this.burger_name}}</li>-->
+                            <!--<span class="input-group-btn">-->
+              <!--</span>-->
+                        <!--</div>-->
+                    <!--{{/if}}-->
+                <!--{{/each}}-->
 
-            </div>
-        </div>
-    </center>
-</div>
+            <!--</div>-->
+        <!--</div>-->
+    <!--</center>-->
+<!--</div>-->
+
+<h1>Burger WORLD!</h1>
+
+<h2>Burger Casualties</h2>
+
+<ul>
+    {{#each burgers}}
+        {{#if devoured}}
+            {{> burger-block devoured=true}}
+        {{/if}}
+    {{/each}}
+</ul>
+
+<h2>Only the strong BURGERS remain</h2>
+
+<ul>
+    {{#each burgers}}
+        {{#unless devoured}}
+            {{> burger-block devoured=false}}
+        {{/unless}}
+    {{/each}}
+</ul>
+
+<h2>Add a Burger</h2>
+
+<form class="create-form">
+
+    <div class="form-group">
+        <label for="burger">Burger Name: </label>
+        <input type="text"  id="burgerText" name="name">
+    </div>
+
+
+    <button type="submit" id="add-burger">Add Burger</button>
+</form>

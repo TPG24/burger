@@ -1,16 +1,26 @@
+/*body {*/
+/*background-color: #f4c242;*/
+/*}*/
+
+/*img {*/
+/*width: 15%;*/
+/*}*/
+
+/*.red_font {*/
+/*color: #bc001f;*/
+/*}*/
+
+/*.tiny_text {*/
+/*font-size: 11px;*/
+/*color: #5da82f;*/
+/*}*/
+
+h1 {
+    text-align: center;
+    padding: 20px;
+    color: green;
+}
+
 body {
-    background-color: #f4c242;
-}
-
-img {
-    width: 15%;
-}
-
-.red_font {
-    color: #bc001f;
-}
-
-.tiny_text {
-    font-size: 11px;
-    color: #5da82f;
+    color: blue;
 }
