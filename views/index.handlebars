@@ -6,18 +6,18 @@
             <!--<div id="ready_to_eat">-->
 
                 <!--&lt;!&ndash; Dynamically Insert Ready Burgers Here &ndash;&gt;-->
-                <!--{{#each burgers}}-->
-                    <!--{{#unless devoured}}-->
-                        <!--<form action="burger/eat/{{id}}" method="POST">-->
+                <!--{#each burgers}}-->
+                    <!--{#unless devoured}}-->
+                        <!--<form action="burger/eat/{id}}" method="POST">-->
                             <!--<div class="input-group">-->
-                                <!--<li class="form-control">{{id}}. {{burger_name}}</li>-->
+                                <!--<li class="form-control">{id}}. {burger_name}}</li>-->
                                 <!--<span class="input-group-btn">-->
                   <!--<button class="btn btn-success devour-button" type="submit">Devour It!</button>-->
                 <!--</span>-->
                             <!--</div>-->
                         <!--</form>-->
-                    <!--{{/unless}}-->
-                <!--{{/each}}-->
+                    <!--{/unless}}-->
+                <!--{/each}}-->
 
             <!--</div>-->
         <!--</div>-->
@@ -28,15 +28,15 @@
             <!--<div id="already_eaten">-->
 
                 <!--&lt;!&ndash; Dynamically Insert Eaten Burgers Here &ndash;&gt;-->
-                <!--{{#each burgers}}-->
-                    <!--{{#if this.devoured}}-->
+                <!--{#each burgers}}-->
+                    <!--{#if this.devoured}}-->
                         <!--<div class="input-group">-->
-                            <!--<li class="form-control">{{this.id}}. {{this.burger_name}}</li>-->
+                            <!--<li class="form-control">{this.id}}. {this.burger_name}}</li>-->
                             <!--<span class="input-group-btn">-->
               <!--</span>-->
                         <!--</div>-->
-                    <!--{{/if}}-->
-                <!--{{/each}}-->
+                    <!--{/if}}-->
+                <!--{/each}}-->
 
             <!--</div>-->
         <!--</div>-->
